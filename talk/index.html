@@ -9,7 +9,7 @@
     <meta name="description" content="人生只有贪心，没有动态规划。" />
     <link rel="stylesheet" href="https://wwyixiao.github.io/styles/main.css">
     <link rel="stylesheet" href="https://wwyixiao.github.io/media/css/font-awesome.css">
-    <title>十月护龙|Octpro</title>
+    <title>十月护龙|Octpro's Blog</title>
 </head>
 
 <body>
@@ -21,9 +21,9 @@
     
     <div id=side>
         <div class="avatar-border">
-            <img src="https://wwyixiao.github.io/images/avatar.png?v=1605710536892" class="avatar">
+            <img src="https://wwyixiao.github.io/images/avatar.png?v=1605713228145" class="avatar">
         </div>
-        <div class="sitename">十月护龙|Octpro</div>
+        <div class="sitename">十月护龙|Octpro&#39;s Blog</div>
         <span class="describtion" data-text='["人生只有贪心，没有动态规划。"]'>&nbsp;</span>
         
         <div class="search">
@@ -84,20 +84,64 @@
     
     
     
-    
     <div class="mchocie describtion">
-        <a href="https://wwyixiao.github.io/friends" class="menubutton">友人帐</a>
+        <a href="https://wwyixiao.github.io/talk" class="menubutton">说说</a>
     </div>
+    
     
     <hr>
     <div id="footinfo">Powered by <a href="https://wwyixiao.github.io/" target="_blank">十月护龙</a> | Theme: <a
         href="https://github.com/850552586/gridea-theme-fog">Fog</a></div>
     
+    <div class="sitetime"><div id="sitegotimeDate">载入天数...</div>
+    <div id="sitegotimes">载入时分秒...</div></div>
+    <div id="cussitetime" style="display:none">12/12/2019</div>
+    
+    
+    <script async src="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/js/busuanzi.pure.mini.js"></script>
+    <div id="vistornum">
+        <span id="busuanzi_container_site_uv">
+            <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i> 总访问量:<span id="busuanzi_value_site_pv"></span>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <i class="fa fa-user-o" aria-hidden="true"></i> 访问人数:<span id="busuanzi_value_site_uv"></span>
+        </span>
+    </div>
+    <div style="color:white">Copyright © 2020  备案号: 陕ICP备168452号</div>
     
     </div>
 
 
 <script src="https://wwyixiao.github.io/media/js/wordshow.js"></script>
+    
+    <script>
+        //----------------------站点运行时间
+        var now = new Date();
+
+        function createtime() {
+            var sitegotime = document.getElementById("cussitetime").innerHTML + " 00:00:00";
+            var grt = new Date(sitegotime); //此处修改你的建站时间或者网站上线时间
+            now.setTime(now.getTime() + 250);
+            days = (now - grt) / 1000 / 60 / 60 / 24;
+            dnum = Math.floor(days);
+            hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+            hnum = Math.floor(hours);
+            if (String(hnum).length == 1) {
+                hnum = "0" + hnum;
+            }
+            minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+            mnum = Math.floor(minutes);
+            if (String(mnum).length == 1) {
+                mnum = "0" + mnum;
+            }
+            seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+            snum = Math.round(seconds);
+            if (String(snum).length == 1) {
+                snum = "0" + snum;
+            }
+            document.getElementById("sitegotimeDate").innerHTML = "本站已安全运行 " + dnum + " 天 ";
+            document.getElementById("sitegotimes").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+        }
+        setInterval("createtime()", 250);
+    </script>
     
 
 
@@ -268,7 +312,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="https://wwyixiao.github.io">十月护龙|Octpro&nbsp;&nbsp;|</a>
+        <a class="navbar-brand" href="https://wwyixiao.github.io">十月护龙|Octpro&#39;s Blog&nbsp;&nbsp;|</a>
         <span class="navbar-brand mbapspan"><i id="mbaplayer" class="fa fa-play-circle-o" aria-hidden="true"
             style="font-size: 28px;top: 12px;position: absolute;" onclick="aplayerPlay();"></i></span>
       </div>
@@ -310,9 +354,8 @@
           
           
           
+          <li><a href="https://wwyixiao.github.io/talk">说说</a></li>
           
-          <li><a href="https://wwyixiao.github.io/friends">友链</a></li>
-
           
         </ul>
       </div><!-- /.navbar-collapse -->
@@ -373,6 +416,70 @@
                 
             </div>
             
+                <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+</head>
+<body>
+    <div class="miniMode">
+        <meting-js id="myaplayer" server="netease" type="playlist" fixed="true" order="default">
+        </meting-js>
+    </div>   
+</body>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+<script>
+    var aplayerid = "770246650";
+    var aplayerserver = "netease";
+    var aplayerorder = "random";
+    var aplayerautoplay = "false";
+    var aplayer = $("#myaplayer");
+    aplayer.attr("server",aplayerserver);
+    aplayer.attr("id",aplayerid);
+    aplayer.attr("order",aplayerorder);
+    if(aplayerautoplay=="true")
+        aplayer.attr("autoplay","true");
+</script>
+
+<script src="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/js/Aplayer.min.js"></script>
+<!-- require MetingJS -->
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+<script>
+    function aplayerbtnInit(){
+        var player = document.querySelectorAll('meting-js')[0].aplayer;
+        player.lrc.hide();
+        var mbabtn = $("#mbaplayer");
+        if(player.paused==false)
+        {
+            mbabtn.removeClass("fa-play-circle-o");
+            mbabtn.addClass("fa-pause-circle");
+        }
+        else
+        {
+            mbabtn.addClass("fa-play-circle-o");
+            mbabtn.removeClass("fa-pause-circle");
+        }
+    }
+
+    function aplayerPlay(){
+        var player = document.querySelectorAll('meting-js')[0].aplayer;
+        var mbabtn = $("#mbaplayer");
+        if(player.paused==true)
+        {
+            player.play();
+            mbabtn.removeClass("fa-play-circle-o");
+            mbabtn.addClass("fa-pause-circle");
+        }
+        else
+        {
+            player.pause();
+            mbabtn.addClass("fa-play-circle-o");
+            mbabtn.removeClass("fa-pause-circle");
+        }
+    }
+</script>
+            
         </div>
         <div id="bg">
         </div>
@@ -424,7 +531,7 @@
     add();
 
     function get() {
-        var t = JSON.parse('[]');
+        var t = JSON.parse('[{"author":"","img":"","text":"","time":""}]');
         talkindex = t.length - 1;
         for (var i = t.length - 1; i >= 0; i--) {
             var d = {};
@@ -456,7 +563,7 @@
                 <img src="' + talks[i].img + '" class="talkimg"> \
                 <div class="ainfo">\
                     <div class="ainfo-intro">\
-                        <img class="intro1" src="https://wwyixiao.github.io/images/avatar.png?v=1605710536892">\
+                        <img class="intro1" src="https://wwyixiao.github.io/images/avatar.png?v=1605713228145">\
                         <div class="author">' + talks[i].author + '</div>·\
                         <div class="time">' + talks[i].time + '</div>\
                     </div>\
@@ -469,7 +576,7 @@
             <div class="talk" v-for="t in talks"> \
                 <div class="ainfo">\
                     <div class="ainfo-intro">\
-                        <img class="intro1" src="https://wwyixiao.github.io/images/avatar.png?v=1605710536892">\
+                        <img class="intro1" src="https://wwyixiao.github.io/images/avatar.png?v=1605713228145">\
                         <div class="author">' + talks[i].author + '</div>·\
                         <div class="time">' + talks[i].time + '</div>\
                     </div>\
