@@ -170,7 +170,7 @@
     
     <div id=side>
         <div class="avatar-border">
-            <img src="https://wwyixiao.github.io/images/avatar.png?v=1605703305166" class="avatar">
+            <img src="https://wwyixiao.github.io/images/avatar.png?v=1605710536892" class="avatar">
         </div>
         <div class="sitename">十月护龙|Octpro</div>
         <span class="describtion" data-text='["人生只有贪心，没有动态规划。"]'>&nbsp;</span>
@@ -184,13 +184,21 @@
     <div class="share-button">
         <span>社交按钮</span>
         
+        <a href="https://github.com/wwyixiao.com" target="_blank"><i style="font-size: 20px;"><img class="icon"
+                    src="https://wwyixiao.github.io/media/images/github.png" alt=""></i></a>
+        
+        
+        <a onclick="showqq()"><i style="font-size: 20px;"><img class="icon" src="https://wwyixiao.github.io/media/images/QQ.png" alt=""></i></a>
         
         
         
+        
+        <a href="https://u.wechat.com/MI8ZAO6NrEQvk6z5QVZRDMg" target="_blank"><i style="font-size: 20px;"><img class="icon"
+                    src="https://wwyixiao.github.io/media/images/wechat.png" alt=""></i></a>
         
         
     </div>
-    <div id="qq" style="display:none"></div>
+    <div id="qq" style="display:none">853342750</div>
     
     
     <div class="mchocie describtion">
@@ -396,7 +404,7 @@
             
             <div class="postdetailimg" style="width:100%;overflow: hidden;">
                 
-                <img src="" class="postimage">
+                <img src="https://s3.ax1x.com/2020/11/18/DnJtCF.jpg" class="postimage">
                 
             </div>
             <div class="postinfo-detail">
@@ -487,7 +495,57 @@
                 <div id="comment"  class="comment" style="background: white">
                     <div class="commentcontainer">
                         
-                        <p>请到客户端“主题--自定义配置--valine”中填入ID和KEY</p>
+                        <style>
+
+
+    @media screen and (min-width: 1300px) {
+        .veditor::placeholder {
+            color: #b3b3b3;
+            font-size: 18px;
+            text-align: center;
+            line-height: 3rem;
+            font-family: kaiti;
+        }
+    }
+</style>
+
+<body>
+    <div id="vcomments">
+    </div>
+    <script src="https://wwyixiao.github.io/media/js/valine.min.js"></script>
+    <!-- <script src="https://unpkg.com/valine/dist/Valine.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            appId: 'G2BPhpEiewvt2rW0HbLw4fdW-gzGzoHsz',
+            appKey: 'BHCevlEzbyMSKr6WyYIHQqKO',
+            notify: true,
+            verify: false,
+            avatar: 'retro',
+            pageSize: 10,
+            placeholder: '既然来了，何不畅所欲言呢？',
+            visitor: true, // 阅读量统计
+        });
+    </script>
+    <script type="text/javascript">
+        // jinrishici.load(function (result) {
+        //     var jrsc_plac = result.data.content + "\n「" + result.data.origin.title + "」" + result.data.origin
+        //         .dynasty + " · " + result.data.origin.author;
+        //     if (jrsc_plac != undefined)
+        //         document.getElementById("veditor").setAttribute("placeholder", jrsc_plac);
+        // 
+        var jrsc = '既然来了，何不畅所欲言呢？';
+        jinrishici.load(function (result) {
+                // 自己的处理逻辑
+                jrsc = result.data.content + "\n「" + result.data.origin.title + "」" + result.data.origin
+                 .dynasty + " · " + result.data.origin.author;
+            });
+    </script> 
+    
+</body>
+                        <div class="clear"></div>
                         
                     </div>
                 </div>
@@ -520,7 +578,7 @@
             </div>
         </div>
     </div>
-    <div id="bgchoice" style="display: none"></div>
+    <div id="bgchoice" style="display: none">link</div>
     
     <div id="bgurl" style="display:none">https://s3.ax1x.com/2020/11/18/DnJtCF.jpg</div>
     
@@ -728,8 +786,8 @@
         var rootaddr = $("#rootaddr").html();
         pl = pl.replace(rootaddr, "");
 
-        var appid = '';
-        var appkey = '';
+        var appid = 'G2BPhpEiewvt2rW0HbLw4fdW-gzGzoHsz';
+        var appkey = 'BHCevlEzbyMSKr6WyYIHQqKO';
         console.log(appid, appkey)
         if(AV==undefined)
             AV.init({
