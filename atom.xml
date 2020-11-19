@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wwyixiao.github.io</id>
     <title>十月护龙|Octpro&apos;s Blog</title>
-    <updated>2020-11-19T08:10:16.442Z</updated>
+    <updated>2020-11-19T08:11:33.378Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wwyixiao.github.io"/>
     <link rel="self" href="https://wwyixiao.github.io/atom.xml"/>
@@ -15,7 +15,7 @@
         <id>https://wwyixiao.github.io/post/tan-xin-suan-fa-he-dong-tai-gui-hua-suan-fa-jian-xi/</id>
         <link href="https://wwyixiao.github.io/post/tan-xin-suan-fa-he-dong-tai-gui-hua-suan-fa-jian-xi/">
         </link>
-        <updated>2020-11-19T07:56:19.000Z</updated>
+        <updated>2019-11-19T07:56:19.000Z</updated>
         <content type="html"><![CDATA[<h2 id="贪心算法">贪心算法</h2>
 <p><strong>贪心算法</strong>（贪婪算法,Greedy algorithm）:是一种在每一步选择中都采取在当前状态下最好或最优（即最有利）的选择，从而希望导致结果是最好或最优的算法。<br>
 eg:在旅行推销员问题中，如果旅行员每次都选择最近的城市，那这就是一种贪心算法。<br>
