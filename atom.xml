@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wwyixiao.github.io</id>
     <title>十月护龙|Octpro&apos;s Blog</title>
-    <updated>2020-11-19T06:25:02.303Z</updated>
+    <updated>2020-11-19T08:10:16.442Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wwyixiao.github.io"/>
     <link rel="self" href="https://wwyixiao.github.io/atom.xml"/>
@@ -10,4 +10,33 @@
     <logo>https://wwyixiao.github.io/images/avatar.png</logo>
     <icon>https://wwyixiao.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 十月护龙|Octpro&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[贪心算法和动态规划算法 简析]]></title>
+        <id>https://wwyixiao.github.io/post/tan-xin-suan-fa-he-dong-tai-gui-hua-suan-fa-jian-xi/</id>
+        <link href="https://wwyixiao.github.io/post/tan-xin-suan-fa-he-dong-tai-gui-hua-suan-fa-jian-xi/">
+        </link>
+        <updated>2020-11-19T07:56:19.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="贪心算法">贪心算法</h2>
+<p><strong>贪心算法</strong>（贪婪算法,Greedy algorithm）:是一种在每一步选择中都采取在当前状态下最好或最优（即最有利）的选择，从而希望导致结果是最好或最优的算法。<br>
+eg:在旅行推销员问题中，如果旅行员每次都选择最近的城市，那这就是一种贪心算法。<br>
+贪心算法在有最优子结构的问题中尤为有效。最优子结构的意思是局部最优解能决定全局最优解。简单地说，问题能够分解成子问题来解决，子问题的最优解能递推到最终问题的最优解。<br>
+贪心算法与动态规划的不同在于它对每个子问题的解决方案都做出选择，不能回退。动态规划则会保存以前的运算结果，并根据以前的结果对当前进行选择，有回退功能。<br>
+贪心法可以解决一些最优化问题，如：求图中的最小生成树、求哈夫曼编码……对于其他问题，贪心法一般不能得到我们所要求的答案。一旦一个问题可以通过贪心法来解决，那么贪心法一般是解决这个问题的最好办法。由于贪心法的高效性以及其所求得的答案比较接近最优结果，贪心法也可以用作辅助算法或者直接解决一些要求结果不特别精确的问题。在不同情况，选择最优的解，可能会导致辛普森悖论（Simpson's Paradox），<strong>不一定出现最优的解</strong>。</p>
+<h2 id="实现细节">实现细节</h2>
+<ul>
+<li>创建数学模型来描述问题。</li>
+<li>把求解的问题分成若干个子问题。</li>
+<li>对每一子问题求解，得到子问题的局部最优解。</li>
+<li>把子问题的解局部最优解合成原来解问题的一个解。<br>
+实现该算法的过程：从问题的某一初始解出发；while 能朝给定总目标前进一步 do，求出可行解的一个解元素；最后，由所有解元素组合成问题的一个可行解。</li>
+</ul>
+<h2 id="动态规划">动态规划</h2>
+<p><strong>动态规划</strong>(Dynamic programming，DP):是一种在数学、管理科学、计算机科学、经济学和生物信息学中使用的，通过把原问题分解为相对简单的子问题的方式求解复杂问题的方法。<br>
+动态规划常常适用于有重叠子问题和最优子结构性质的问题，动态规划方法所耗时间往往远少于朴素解法。<br>
+动态规划背后的基本思想非常简单。大致上，若要解一个给定问题，我们需要解其不同部分（即子问题），再根据子问题的解以得出原问题的解。<br>
+通常许多子问题非常相似，为此动态规划法试图仅仅解决每个子问题一次，从而减少计算量：一旦某个给定子问题的解已经算出，则将其记忆化存储，以便下次需要同一个子问题解之时直接查表。这种做法在重复子问题的数目关于输入的规模呈指数增长时特别有用。<br>
+背包问题<br>
+背包问题作为NP完全问题，暂时不存在多项式时间算法。动态规划属于背包问题求解最优解的可行方法之一。此外，求解背包问题最优解还有搜索法等，近似解还有贪心法等，分数背包问题有最优贪心解等。 背包问题具有最优子结构和重叠子问题。动态规划一般用于求解背包问题中的整数背包问题（即每种物品所选的个数必须是整数）。</p>
+]]></content>
+    </entry>
 </feed>
