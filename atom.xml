@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://wwyixiao.github.io</id>
     <title>十月护龙|Octpro&apos;s Blog</title>
-    <updated>2020-11-20T14:37:54.162Z</updated>
+    <updated>2020-11-20T14:44:44.721Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://wwyixiao.github.io"/>
     <link rel="self" href="https://wwyixiao.github.io/atom.xml"/>
@@ -10,6 +10,61 @@
     <logo>https://wwyixiao.github.io/images/avatar.png</logo>
     <icon>https://wwyixiao.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 十月护龙|Octpro&apos;s Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[单片机CH4汇编程序编程]]></title>
+        <id>https://wwyixiao.github.io/post/dan-pian-ji-ch4-hui-bian-cheng-xu-bian-cheng/</id>
+        <link href="https://wwyixiao.github.io/post/dan-pian-ji-ch4-hui-bian-cheng-xu-bian-cheng/">
+        </link>
+        <updated>2020-11-20T14:38:51.000Z</updated>
+        <content type="html"><![CDATA[<ul>
+<li>编程实现运算式c = a2+b2  假定a、 b、 c 3个数分别存放在内部RAM的DA、DB、DC单元中，别有平方运算子程序调用。（内部RAM的DA、DB、DC单元设为20H　21H　22H）</li>
+</ul>
+<pre><code>    ORG 0000H
+    MOV A,20H
+    PUSH ACC
+    AJMP SQR
+    POP ACC
+    MOV 22H,A
+    MOV A,21H
+    PUSH ACC
+    AJMP SQR
+    POP ACC
+    ADD A,22H
+    MOV 22H,A
+    END
+</code></pre>
+<ul>
+<li>比较两个ASCII码字符串是否相等。字符串的长度在内部RAM 41H单元，第一个字符串的首地址为42H，第二个字符串的首地址为52H。如果两个字符串相等，则置内部RAM 40H单元为00H；否则置40H单元为FF。</li>
+</ul>
+<pre><code>ORG  0030H
+       MOV R0,#42H
+       MOV R1,#52H
+       MOV R7,41H ;字符串长度
+ LOOP: MOV A,@R0
+       MOV 30H,@R1
+       CJNE A,30H,LK
+       INC  R0
+       INC  R1
+       DJNZ  R7,LOOP
+       MOV  40H ,#00H
+       SJMP  DD
+  LK:  MOV 40H,#0FFH
+  DD:  SJMP DD
+</code></pre>
+<ul>
+<li>外部RAM首址为table的数据表中，有10个字节的数据。编程将每个字节的最高位无条件地置“1”。</li>
+</ul>
+<pre><code>      ORG 0030H
+      MOV  DPTR,#table
+      MOV  R6,#10
+ LOOP:MOVX A,@DPTR
+      SETB  E7H;E7H就是累加器A的最高位(ACC.7), 也可 : SETB ACC.7
+       MOVX @DPTR,A
+       INC  DPTR
+       DJNZ R6,LOOP
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[贪心算法和动态规划算法 简析]]></title>
         <id>https://wwyixiao.github.io/post/tan-xin-suan-fa-he-dong-tai-gui-hua-suan-fa-jian-xi/</id>

@@ -1,10 +1,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0">
-    <meta name="description" content="贪心算法
-贪心算法（贪婪算法,Greedy algorithm）:是一种在每一步选择中都采取在当前状态下最好或最优（即最有利）的选择，从而希望导致结果是最好或最优的算法。
-eg:在旅行推销员问题中，如果旅行员每次都选择最近的城市，那这就是一..." />
-    <meta name="keywords" content="算法,DP,贪心算法" />
+    <meta name="description" content="
+编程实现运算式c = a2+b2  假定a、 b、 c 3个数分别存放在内部RAM的DA、DB、DC单元中，别有平方运算子程序调用。（内部RAM的DA、DB、DC单元设为20H　21H　22H）
+
+    ORG 0000H
+    MO..." />
+    <meta name="keywords" content="单片机,汇编" />
     <link rel="stylesheet" href="https://wwyixiao.github.io/media/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://wwyixiao.github.io/styles/main.css">
     
@@ -443,20 +445,16 @@ eg:在旅行推销员问题中，如果旅行员每次都选择最近的城市�
                 
             </div>
             <div class="postinfo-detail">
-                <div class="postdate"><i class="fa fa-calendar"></i>2019-11-19</div>
-            <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 4 min read</div>
+                <div class="postdate"><i class="fa fa-calendar"></i>2020-11-20</div>
+            <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 2 min read</div>
             <div class="posttag">
                 
-                <a href="https://wwyixiao.github.io/tag/l4ot2chzw/" class="postlink">
-                    <i class="fa fa-tag"></i> 算法
+                <a href="https://wwyixiao.github.io/tag/4P6E1-IU3/" class="postlink">
+                    <i class="fa fa-tag"></i> 单片机
                 </a>
                 
-                <a href="https://wwyixiao.github.io/tag/V6wCnaS9Tf/" class="postlink">
-                    <i class="fa fa-tag"></i> DP
-                </a>
-                
-                <a href="https://wwyixiao.github.io/tag/1WRzCLFsWl/" class="postlink">
-                    <i class="fa fa-tag"></i> 贪心算法
+                <a href="https://wwyixiao.github.io/tag/7mq3RJ2FjZ/" class="postlink">
+                    <i class="fa fa-tag"></i> 汇编
                 </a>
                 
             </div>
@@ -464,9 +462,9 @@ eg:在旅行推销员问题中，如果旅行员每次都选择最近的城市�
         
         <div id="articlecontent">
             <div id="texttitle" style="text-align: center">
-                <h2>贪心算法和动态规划算法 简析</h2>
+                <h2>单片机CH4汇编程序编程</h2>
                 <!-- id 将作为查询条件 -->
-                <div id="pl" style="display:none">https://wwyixiao.github.io/post/tan-xin-suan-fa-he-dong-tai-gui-hua-suan-fa-jian-xi/</div>
+                <div id="pl" style="display:none">https://wwyixiao.github.io/post/dan-pian-ji-ch4-hui-bian-cheng-xu-bian-cheng/</div>
                 <div id="rootaddr" style="display:none">https://wwyixiao.github.io</div>
                 <span id="hotnum">
                     <h4><i class="fa fa-eye" aria-hidden="true" style="color: #FF8C00;"></i>&nbsp;&nbsp;热度</i>: <i
@@ -474,27 +472,53 @@ eg:在旅行推销员问题中，如果旅行员每次都选择最近的城市�
                 </span>
             </div>
             <div class="text ">
-                <h2 id="贪心算法">贪心算法</h2>
-<p><strong>贪心算法</strong>（贪婪算法,Greedy algorithm）:是一种在每一步选择中都采取在当前状态下最好或最优（即最有利）的选择，从而希望导致结果是最好或最优的算法。<br>
-eg:在旅行推销员问题中，如果旅行员每次都选择最近的城市，那这就是一种贪心算法。<br>
-贪心算法在有最优子结构的问题中尤为有效。最优子结构的意思是局部最优解能决定全局最优解。简单地说，问题能够分解成子问题来解决，子问题的最优解能递推到最终问题的最优解。<br>
-贪心算法与动态规划的不同在于它对每个子问题的解决方案都做出选择，不能回退。动态规划则会保存以前的运算结果，并根据以前的结果对当前进行选择，有回退功能。<br>
-贪心法可以解决一些最优化问题，如：求图中的最小生成树、求哈夫曼编码……对于其他问题，贪心法一般不能得到我们所要求的答案。一旦一个问题可以通过贪心法来解决，那么贪心法一般是解决这个问题的最好办法。由于贪心法的高效性以及其所求得的答案比较接近最优结果，贪心法也可以用作辅助算法或者直接解决一些要求结果不特别精确的问题。在不同情况，选择最优的解，可能会导致辛普森悖论（Simpson's Paradox），<strong>不一定出现最优的解</strong>。</p>
-<h2 id="实现细节">实现细节</h2>
-<ul>
-<li>创建数学模型来描述问题。</li>
-<li>把求解的问题分成若干个子问题。</li>
-<li>对每一子问题求解，得到子问题的局部最优解。</li>
-<li>把子问题的解局部最优解合成原来解问题的一个解。<br>
-实现该算法的过程：从问题的某一初始解出发；while 能朝给定总目标前进一步 do，求出可行解的一个解元素；最后，由所有解元素组合成问题的一个可行解。</li>
+                <ul>
+<li>编程实现运算式c = a2+b2  假定a、 b、 c 3个数分别存放在内部RAM的DA、DB、DC单元中，别有平方运算子程序调用。（内部RAM的DA、DB、DC单元设为20H　21H　22H）</li>
 </ul>
-<h2 id="动态规划">动态规划</h2>
-<p><strong>动态规划</strong>(Dynamic programming，DP):是一种在数学、管理科学、计算机科学、经济学和生物信息学中使用的，通过把原问题分解为相对简单的子问题的方式求解复杂问题的方法。<br>
-动态规划常常适用于有重叠子问题和最优子结构性质的问题，动态规划方法所耗时间往往远少于朴素解法。<br>
-动态规划背后的基本思想非常简单。大致上，若要解一个给定问题，我们需要解其不同部分（即子问题），再根据子问题的解以得出原问题的解。<br>
-通常许多子问题非常相似，为此动态规划法试图仅仅解决每个子问题一次，从而减少计算量：一旦某个给定子问题的解已经算出，则将其记忆化存储，以便下次需要同一个子问题解之时直接查表。这种做法在重复子问题的数目关于输入的规模呈指数增长时特别有用。<br>
-背包问题<br>
-背包问题作为NP完全问题，暂时不存在多项式时间算法。动态规划属于背包问题求解最优解的可行方法之一。此外，求解背包问题最优解还有搜索法等，近似解还有贪心法等，分数背包问题有最优贪心解等。 背包问题具有最优子结构和重叠子问题。动态规划一般用于求解背包问题中的整数背包问题（即每种物品所选的个数必须是整数）。</p>
+<pre><code>    ORG 0000H
+    MOV A,20H
+    PUSH ACC
+    AJMP SQR
+    POP ACC
+    MOV 22H,A
+    MOV A,21H
+    PUSH ACC
+    AJMP SQR
+    POP ACC
+    ADD A,22H
+    MOV 22H,A
+    END
+</code></pre>
+<ul>
+<li>比较两个ASCII码字符串是否相等。字符串的长度在内部RAM 41H单元，第一个字符串的首地址为42H，第二个字符串的首地址为52H。如果两个字符串相等，则置内部RAM 40H单元为00H；否则置40H单元为FF。</li>
+</ul>
+<pre><code>ORG  0030H
+       MOV R0,#42H
+       MOV R1,#52H
+       MOV R7,41H ;字符串长度
+ LOOP: MOV A,@R0
+       MOV 30H,@R1
+       CJNE A,30H,LK
+       INC  R0
+       INC  R1
+       DJNZ  R7,LOOP
+       MOV  40H ,#00H
+       SJMP  DD
+  LK:  MOV 40H,#0FFH
+  DD:  SJMP DD
+</code></pre>
+<ul>
+<li>外部RAM首址为table的数据表中，有10个字节的数据。编程将每个字节的最高位无条件地置“1”。</li>
+</ul>
+<pre><code>      ORG 0030H
+      MOV  DPTR,#table
+      MOV  R6,#10
+ LOOP:MOVX A,@DPTR
+      SETB  E7H;E7H就是累加器A的最高位(ACC.7), 也可 : SETB ACC.7
+       MOVX @DPTR,A
+       INC  DPTR
+       DJNZ R6,LOOP
+</code></pre>
 
             </div>
             <hr style="width: 80%;">
@@ -525,27 +549,27 @@ eg:在旅行推销员问题中，如果旅行员每次都选择最近的城市�
             <div class="postfooter">
                 <ul class="post-copyright">
                     <li><strong>文章作者：</strong>十月护龙</li>
-            <li><strong>原文链接：</strong>https://wwyixiao.github.io/post/tan-xin-suan-fa-he-dong-tai-gui-hua-suan-fa-jian-xi/</li>
+            <li><strong>原文链接：</strong>https://wwyixiao.github.io/post/dan-pian-ji-ch4-hui-bian-cheng-xu-bian-cheng/</li>
             <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用<i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA
                 许可协议。转载请注明出处！</li>
             </ul>
         </div>
         <div id="otherpost">
             
-            <div class="prev-post-pc">
-                <div id="ppcontainer" onclick="window.location.href= 'https://wwyixiao.github.io/post/dan-pian-ji-ch4-hui-bian-cheng-xu-bian-cheng/';return false">
+            
+            <div class="next-post-pc">
+                <div id="npcontainer" onclick="window.location.href= 'https://wwyixiao.github.io/post/tan-xin-suan-fa-he-dong-tai-gui-hua-suan-fa-jian-xi/';return false">
                     
                     
                     <img src="https://image.bestzuo.cn/images/20201111205107.jpg!getwebp" style="width: 100%;" class="opimg">
                     
-                    
-                    <h4 class="optitle">单片机CH4汇编程序编程</h4>
+                        
+                    <h4 class="optitle">贪心算法和动态规划算法 简析</h4>
                 </div>
             </div>
-            <div class="prev-post">
-                上一篇 <a href="https://wwyixiao.github.io/post/dan-pian-ji-ch4-hui-bian-cheng-xu-bian-cheng/">单片机CH4汇编程序编程</a>
+            <div class="next-post">
+                下一篇 <a href="https://wwyixiao.github.io/post/tan-xin-suan-fa-he-dong-tai-gui-hua-suan-fa-jian-xi/">贪心算法和动态规划算法 简析</a>
             </div>
-            
             
         </div>
     </div>
@@ -689,16 +713,7 @@ eg:在旅行推销员问题中，如果旅行员每次都选择最近的城市�
 </script>
         
         <div class="toc-container">
-            <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95">贪心算法</a></li>
-<li><a href="#%E5%AE%9E%E7%8E%B0%E7%BB%86%E8%8A%82">实现细节</a></li>
-<li><a href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92">动态规划</a></li>
-</ul>
-</li>
-</ul>
-
+            
     </div>
     </div>
     </div>
@@ -936,7 +951,7 @@ eg:在旅行推销员问题中，如果旅行员每次都选择最近的城市�
                 var nc = new NewCounter();
                 nc.save({
                     time: 1,
-                    title: "贪心算法和动态规划算法 简析",
+                    title: "单片机CH4汇编程序编程",
                     url: pl,
                     xid: pl,
                 }).then(function (object) {
